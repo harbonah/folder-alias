@@ -2,7 +2,7 @@
   "name": "folder-alias",
   "displayName": "folder-alias",
   "description": "folder alias",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "engines": {
     "vscode": "^1.64.0"
   },
@@ -18,47 +18,45 @@
   "icon": "media/icons.png",
   "repository": "https://github.com/Muromi-Rikka/folder-alias",
   "contributes": {
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "folder-alias",
-          "title": "Folder Alias",
-          "icon": "media/navAlias.svg"
-        }
-      ]
-    },
-    "views": {
-      "folder-alias": [
-        {
-          "id": "folder-alias",
-          "name": "Folder Alias"
-        }
-      ]
-    },
     "commands": [
       {
         "command": "folder-alias.addAlias",
-        "title": "Add Descript",
+        "title": "Add Alias",
         "icon": {
           "light": "media/light/edit.svg",
           "dark": "media/dark/edit.svg"
         }
       },
       {
-        "command": "folder-alias.refresh",
-        "title": "refresh"
+        "command": "folder-alias.addTooltip",
+        "title": "Add Tooltip",
+        "icon": {
+          "light": "media/light/edit.svg",
+          "dark": "media/dark/edit.svg"
+        }
+      },
+      {
+        "command": "folder-alias.delAlias",
+        "title": "Delete Alias",
+        "icon": {
+          "light": "media/light/edit.svg",
+          "dark": "media/dark/edit.svg"
+        }
       }
     ],
     "menus": {
-      "view/item/context": [
+      "explorer/context": [
         {
           "command": "folder-alias.addAlias",
-          "group": "inline",
-          "when": "view == folder-alias"
+          "group": "1_modification"
         },
         {
-          "command": "folder-alias.refresh",
-          "when": "view == folder-alias"
+          "command": "folder-alias.addTooltip",
+          "group": "1_modification"
+        },
+        {
+          "command": "folder-alias.delAlias",
+          "group": "1_modification"
         }
       ]
     }
